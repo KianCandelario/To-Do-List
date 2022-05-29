@@ -1,0 +1,236 @@
+/* WHOLE PAGE */
+@import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,400;1,500;1,600;1,700&family=Bad+Script&family=Bangers&display=swap');
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+}
+main {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to right, #ffffff, #eeeeee, #fffdea, #fcffd4, #fffeca, #fcedbe, #fffeaf);
+    background-size: 300%;
+    animation: bg-animation 3s infinite alternate; /*Moving gradient background*/
+}
+
+/* TITLE PART */
+#title {
+    position: relative;
+    top: 25px;
+    margin: auto;
+    margin-bottom: 50px;
+    background-color: #a9a9a9;
+    width: 30%;
+    border-radius: 11px;
+    min-width: 30%;
+    font-size: 350%;
+    font-family: 'Bangers', cursive;
+    text-align: center;
+    padding-top: 25px;
+}
+/*Responsive Image Button*/
+.mode-button {
+    margin-bottom: 11px;
+    border-radius: 15px;
+    max-width: 100%;
+    transition: filter .5s;
+}
+#dark {
+    margin-right: 11px;
+}
+#light {
+    margin-left: 11px;
+}
+.mode-button:hover {
+    filter: invert(100%);
+}
+.mode-button:active {
+    height: 300%; 
+}
+/* Dark Mode */
+.dark-mode-body {
+    background-image: linear-gradient(to right, #424242, #363636, #272727, #1d1d1d, #000000);
+    background-size: 300%;
+    animation: bg-animation 3s infinite alternate; /*Moving gradient background*/
+}
+.dark-mode-text {
+    color: white;
+    transition: color .5s;
+}
+.dark-mode-button {
+    border-radius: 15px;
+    max-width: 100%;
+    filter: invert(100%);
+    transition: filter .5s;
+}
+.dark-mode-button:hover {
+    filter: invert(100%);
+}
+/* Light Mode */
+.l {
+    filter: invert(100%);
+}
+.light-mode-text {
+    color: black;
+    transition: color .5s;
+}
+.light-mode-button {
+    border-radius: 15px;
+    max-width: 100%;
+    filter: invert(100%);
+    transition: filter .5s;
+}
+
+/* INPUT PART */
+#input-part {
+    text-align: center;
+    margin-bottom: 27px;
+}
+.input-task {
+    width: 35%;
+    padding: 11px;
+    border: 0px;
+}
+.todo-add-bttn {
+    background-color: #d3d3d3;
+    padding: 11px;
+    border: 0px;
+    font-family: 'Asap', sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    cursor: pointer;
+}
+.todo-add-bttn:hover {
+    color: white;
+    transition: background-color .7s;
+    background-color: rgb(155, 247, 102);
+}
+#options {
+    border: 0px;
+    padding: 11px;
+    font-family: 'Asap', sans-serif;
+    cursor: pointer;
+}
+
+/* EMPTY INPUT */
+.empty-warning {
+    font-family: Asap, sans-serif;
+    animation: shake 0.1s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+    color: red;
+    margin: auto;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* LIST CONTAINER PART */
+.task-list-container {
+    overflow-y: scroll;
+    margin: auto;
+    height: 49%;
+    max-height: 49%;
+    width: 50%;
+    background-color: gray;
+    min-width: 40%;
+    opacity: 0.7;
+    transition: opacity .5s;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    display: none;
+}
+.task-list-container:hover {
+    opacity: 1.0;
+}
+.text-in-list-container {
+    position: relative;
+    top: 42%;
+    opacity: 0.7;
+    text-align: center;
+    margin: auto;
+    font-family: Asap, sans-serif;
+    font-weight: bold;
+    font-size: 300%;
+}
+.done {
+    opacity: 50%;
+    text-decoration: line-through;
+}
+.toDoSect:nth-child(odd) {
+    background-color: #a9a9a9;
+}
+.toDoSect {
+    height: 40px;
+    font-family: Asap, sans-serif;
+    list-style: none;
+    background-color: #d3d3d3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.toDoSect li {
+    flex: 1; /*Put the buttons to the side*/
+}
+li {
+    margin-left: 21px;
+}
+.doneBttn, .removeBttn {
+    height: inherit;
+    opacity: 50%;
+    padding: 11px;
+    border: 0px;
+}
+.doneBttn, .removeBttn:hover {
+    cursor: pointer;
+}
+.doneBttn {
+    font-size: 100%;
+    background-color: green;
+}
+.doneBttn:hover {
+    transition: opacity 0.5s; 
+    opacity:100%;
+}
+.removeBttn {
+    font-size: 110%;
+    background-color: red;
+}
+.removeBttn:hover {
+    transition: opacity 0.5s; 
+    opacity:100%;
+}
+.toDoSect:hover {
+    background-color: #f4f0ec;
+}
+
+/*Keyframes*/
+@keyframes bg-animation {
+    0% {
+        background-position: left;
+    }
+    100% {
+        background-position: right;
+    }
+}
+
+@keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="styles.css" rel="stylesheet">
+        <title>To Do List</title>
+    </head>
+    <body>
+        <main>
+            <section id="title">
+                <h1 id="title-text">To-Do List</h1>
+                <input id="dark" class="mode-button d-mode-bttn" type="image" src="images/dark-mode.png" name="Dark Mode" height="25px" width="25px" alt="Dark Mode" />
+                <input id="light" class="mode-button l-mode-bttn l" type="image" src="images/light-mode.png" name="Light Mode" height="25px" width="25px" alt="Light Mode" />
+            </section>
+            <section class="empty-alert"></section>
+            <section id="input-part">
+                <span>
+                    <input class="input-task" type="text" placeholder="List the things you need to do..." size="30" maxlength="100" />
+                    <button type="submit" class="todo-add-bttn">ADD</button>
+                    <select id="options">
+                        <option value="all-tasks">All Tasks</option>
+                        <option value="completed">Completed</option>
+                        <option value="uncompleted">Uncompleted</option>
+                    </select>
+                </span>
+            </section>
+            <div class="task-list-container">
+                <ul class="list"></ul>
+            </div>
+            <script src="app.js"></script>
+        </main>
+    </body>
+</html>
